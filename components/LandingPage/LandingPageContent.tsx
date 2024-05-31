@@ -10,8 +10,6 @@ const LandingPageContent = () => {
   return (
     <div className="container flex flex-col items-center justify-center gap-4 px-4 text-center sm:gap-8 md:px-6">
       <LandingPageHeader />
-      {/* <FundsRecipientInput />
-      <SaleStrategyInput /> */}
       {setupActions.length > 0 && <Output />}
       <GenerateButton />
       <MadeBySweets />
