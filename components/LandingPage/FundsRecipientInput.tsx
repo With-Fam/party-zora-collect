@@ -8,7 +8,7 @@ const FundsRecipientInput = () => {
     setFundsRecipient(e.target.value);
   };
 
-  return <Input onChange={handleChange} placeholder="funds recipient" />;
+  return <Input onChange={handleChange} placeholder="zora collection address" />;
 };
 
 export default FundsRecipientInput;
