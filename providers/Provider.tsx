@@ -4,14 +4,11 @@ const Context = createContext<any>(null);
 
 const Provider = ({ children }: any) => {
   const [proposalData, setProposalData] = useState<any>();
-  const [copied, setCopied] = useState<boolean>(false);
   const [fundsRecipient, setFundsRecipient] = useState<`0x${string}`>();
   const [saleStrategy, setSaleStrategy] = useState<`0x${string}`>();
 
   const value = useMemo(
     () => ({
-      copied,
-      setCopied,
       fundsRecipient,
       setFundsRecipient,
       saleStrategy,
@@ -20,8 +17,6 @@ const Provider = ({ children }: any) => {
       setProposalData,
     }),
     [
-      copied,
-      setCopied,
       fundsRecipient,
       setFundsRecipient,
       saleStrategy,

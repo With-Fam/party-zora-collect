@@ -1,11 +1,11 @@
-import { useProvider } from '@/providers/Provider';
 import Button from '../Button';
 import CopyIcon from './CopyIcon';
 import CheckIcon from './CheckIcon';
 import { toast } from 'react-toastify';
+import { useState } from 'react';
 
 const CopyButton = ({ text }: { text: string }) => {
-  const { copied, setCopied } = useProvider();
+  const [copied, setCopied] = useState(false);
 
   const handleClick = async () => {
     try {
