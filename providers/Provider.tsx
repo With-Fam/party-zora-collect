@@ -3,7 +3,7 @@ import { createContext, useContext, useMemo, useState } from 'react';
 const Context = createContext<any>(null);
 
 const Provider = ({ children }: any) => {
-  const [setupActions, setSetupActions] = useState<string[]>([]);
+  const [proposalData, setProposalData] = useState<any>();
   const [copied, setCopied] = useState<boolean>(false);
   const [fundsRecipient, setFundsRecipient] = useState<`0x${string}`>();
   const [saleStrategy, setSaleStrategy] = useState<`0x${string}`>();
@@ -16,8 +16,8 @@ const Provider = ({ children }: any) => {
       setFundsRecipient,
       saleStrategy,
       setSaleStrategy,
-      setupActions,
-      setSetupActions,
+      proposalData,
+      setProposalData,
     }),
     [
       copied,
@@ -26,8 +26,8 @@ const Provider = ({ children }: any) => {
       setFundsRecipient,
       saleStrategy,
       setSaleStrategy,
-      setupActions,
-      setSetupActions,
+      proposalData,
+      setProposalData,
     ],
   );
 
