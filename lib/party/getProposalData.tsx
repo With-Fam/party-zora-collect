@@ -1,26 +1,10 @@
 import getMaxExecutableTime from '@/lib/party/getMaxExecutableTime';
-import { AbiCoder } from 'ethers';
-import { pad, toHex, concatHex, Address } from 'viem';
-import { BytecodeProposalData, ProposalType } from '@/lib/types/partyTypes';
+import { pad, toHex, concatHex, Address, parseEther } from 'viem';
+import { ProposalType } from '@/lib/types/partyTypes';
+import getZoraPurchaseProposalBytecode from './getZoraPurchaseProposalBytecode';
 
-const getProposalData = (inputProposalData: BytecodeProposalData) => {
-  const abiCoder = AbiCoder.defaultAbiCoder();
-  const encodedBytecodeProposalData = abiCoder.encode(
-    [
-      'tuple(address payable target,uint256 value,bytes data,bool optional,bytes32 expectedResultHash)[]',
-    ],
-    [
-      [
-        {
-          target: inputProposalData.target,
-          value: inputProposalData.value,
-          data: '0x',
-          optional: false,
-          expectedResultHash: '0x0000000000000000000000000000000000000000000000000000000000000000',
-        },
-      ],
-    ],
-  );
+const getProposalData = () => {
+  const encodedBytecodeProposalData = getZoraPurchaseProposalBytecode();
   const hexEncodedSelector = pad(toHex(ProposalType.ArbitraryCalls), {
     size: 4,
   });
