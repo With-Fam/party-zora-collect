@@ -1,7 +1,7 @@
 import { AbiCoder } from 'ethers';
-import { BytecodeProposalData } from '../types/partyTypes';
+import { Address } from 'viem';
 
-const getTransferProposalBytecode = (inputProposalData: BytecodeProposalData) => {
+const getProposalBytecode = (target: Address, value: bigint, data = '0x') => {
   const abiCoder = AbiCoder.defaultAbiCoder();
 
   const encodedBytecodeProposalData = abiCoder.encode(
@@ -11,8 +11,8 @@ const getTransferProposalBytecode = (inputProposalData: BytecodeProposalData) =>
     [
       [
         {
-          target: inputProposalData.target,
-          value: inputProposalData.value,
+          target,
+          value,
           data: '0x',
           optional: false,
           expectedResultHash: '0x0000000000000000000000000000000000000000000000000000000000000000',
@@ -24,4 +24,4 @@ const getTransferProposalBytecode = (inputProposalData: BytecodeProposalData) =>
   return encodedBytecodeProposalData;
 };
 
-export default getTransferProposalBytecode;
+export default getProposalBytecode;

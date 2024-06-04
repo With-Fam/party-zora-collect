@@ -1,7 +1,6 @@
 import getMaxExecutableTime from '@/lib/party/getMaxExecutableTime';
 import { pad, toHex, concatHex, Address, parseEther } from 'viem';
 import { ProposalType } from '@/lib/types/partyTypes';
-import getTransferProposalBytecode from './getTransferProposalBytecode';
 import getZoraPurchaseProposalBytecode from './getZoraPurchaseProposalBytecode';
 
 const getProposalData = () => {

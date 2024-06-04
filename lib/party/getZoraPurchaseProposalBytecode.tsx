@@ -6,7 +6,7 @@ import {
   parseEther,
 } from 'viem';
 import { zoraCreator1155ImplABI } from '@zoralabs/protocol-deployments';
-import { AbiCoder } from 'ethers';
+import getProposalBytecode from './getProposalBytecode';
 
 const getZoraPurchaseProposalBytecode = () => {
   const collectionAddress = '0xab00c2fbfb2cb909f64ba5808ed8c5078e8f1a32' as Address;
@@ -27,26 +27,7 @@ const getZoraPurchaseProposalBytecode = () => {
     functionName: 'mintWithRewards',
     args: [minter, tokenId, quantity, minterArguments, mintReferral],
   });
-
-  const abiCoder = AbiCoder.defaultAbiCoder();
-
-  const encodedBytecodeProposalData = abiCoder.encode(
-    [
-      'tuple(address payable target,uint256 value,bytes data,bool optional,bytes32 expectedResultHash)[]',
-    ],
-    [
-      [
-        {
-          target: collectionAddress,
-          value,
-          data,
-          optional: false,
-          expectedResultHash: '0x0000000000000000000000000000000000000000000000000000000000000000',
-        },
-      ],
-    ],
-  );
-
+  const encodedBytecodeProposalData = getProposalBytecode(collectionAddress, value, data);
   return encodedBytecodeProposalData;
 };
 
