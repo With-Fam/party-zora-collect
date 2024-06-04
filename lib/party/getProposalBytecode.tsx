@@ -13,7 +13,7 @@ const getProposalBytecode = (target: Address, value: bigint, data = '0x') => {
         {
           target,
           value,
-          data: '0x',
+          data,
           optional: false,
           expectedResultHash: '0x0000000000000000000000000000000000000000000000000000000000000000',
         },
