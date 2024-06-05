@@ -3,10 +3,10 @@ import Button from '../Button';
 import { useProvider } from '@/providers/Provider';
 
 const GenerateButton = () => {
-  const { setProposalData } = useProvider();
+  const { collectionAddress, salesConfig, fundsRecipient, setProposalData } = useProvider();
 
   const handleClick = () => {
-    const response = getProposalData();
+    const response = getProposalData(collectionAddress, salesConfig, fundsRecipient);
     setProposalData(response);
   };
 

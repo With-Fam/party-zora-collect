@@ -6,11 +6,14 @@ const Provider = ({ children }: any) => {
   const [proposalData, setProposalData] = useState<any>();
   const [fundsRecipient, setFundsRecipient] = useState<`0x${string}`>();
   const [saleStrategy, setSaleStrategy] = useState<`0x${string}`>();
+  const [collectionAddress, setCollectionAddress] = useState<`0x${string}`>();
 
   const value = useMemo(
     () => ({
       fundsRecipient,
       setFundsRecipient,
+      collectionAddress,
+      setCollectionAddress,
       saleStrategy,
       setSaleStrategy,
       proposalData,
@@ -19,6 +22,8 @@ const Provider = ({ children }: any) => {
     [
       fundsRecipient,
       setFundsRecipient,
+      collectionAddress,
+      setCollectionAddress,
       saleStrategy,
       setSaleStrategy,
       proposalData,

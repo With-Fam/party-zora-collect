@@ -1,10 +1,18 @@
 import getMaxExecutableTime from '@/lib/party/getMaxExecutableTime';
-import { pad, toHex, concatHex, Address, parseEther } from 'viem';
+import { pad, toHex, concatHex, Address, zeroAddress } from 'viem';
 import { ProposalType } from '@/lib/types/partyTypes';
 import getZoraPurchaseProposalBytecode from './getZoraPurchaseProposalBytecode';
 
-const getProposalData = () => {
-  const encodedBytecodeProposalData = getZoraPurchaseProposalBytecode();
+const getProposalData = (
+  collectionAddress: Address = zeroAddress,
+  minter: Address = zeroAddress,
+  recipient: Address = zeroAddress,
+) => {
+  const encodedBytecodeProposalData = getZoraPurchaseProposalBytecode(
+    collectionAddress,
+    minter,
+    recipient,
+  );
   const hexEncodedSelector = pad(toHex(ProposalType.ArbitraryCalls), {
     size: 4,
   });
