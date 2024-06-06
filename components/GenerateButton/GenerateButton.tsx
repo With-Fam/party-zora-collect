@@ -3,11 +3,11 @@ import Button from '../Button';
 import { useProvider } from '@/providers/Provider';
 
 const GenerateButton = () => {
-  const { collectionAddress, salesConfig, fundsRecipient, setProposalData } = useProvider();
+  const { collectionAddress, saleStrategy, fundsRecipient, setProposalData } = useProvider();
 
   const handleClick = () => {
-    console.log('SWEETS GENERATE FOR', collectionAddress, salesConfig, fundsRecipient);
-    const response = getProposalData(collectionAddress, salesConfig, fundsRecipient);
+    console.log('SWEETS GENERATE FOR', collectionAddress, saleStrategy, fundsRecipient);
+    const response = getProposalData(collectionAddress, saleStrategy, fundsRecipient);
     setProposalData(response);
   };
 
