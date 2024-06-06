@@ -6,7 +6,6 @@ const GenerateButton = () => {
   const { collectionAddress, saleStrategy, fundsRecipient, setProposalData } = useProvider();
 
   const handleClick = () => {
-    console.log('SWEETS GENERATE FOR', collectionAddress, saleStrategy, fundsRecipient);
     const response = getProposalData(collectionAddress, saleStrategy, fundsRecipient);
     setProposalData(response);
   };
