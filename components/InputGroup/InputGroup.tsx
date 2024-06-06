@@ -8,12 +8,12 @@ const InputGroup = () => {
   return (
     <div className="flex flex-col gap-5">
       <Input
-        placeholder="party on base"
+        placeholder="party (base)"
         value={fundsRecipient}
         onChange={(e: any) => setFundsRecipient(e.target.value)}
       />
       <Input
-        placeholder="zora collection"
+        placeholder="zora collection (base)"
         value={collectionAddress}
         onChange={(e: any) => setCollectionAddress(e.target.value)}
       />
