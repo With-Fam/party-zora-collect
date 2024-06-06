@@ -16,7 +16,7 @@ const getZoraPurchaseProposalBytecode = (
   const price = 0n;
   const zoraFee = parseEther('0.000777');
   const value = price + zoraFee;
-  const tokenId = 1n;
+  const tokenId = 2n;
   const quantity = 1n;
   const minterArguments = encodeAbiParameters(parseAbiParameters('address x, string y'), [
     recipient,
