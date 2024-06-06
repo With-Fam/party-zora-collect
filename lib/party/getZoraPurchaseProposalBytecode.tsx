@@ -8,15 +8,16 @@ import {
 import { zoraCreator1155ImplABI } from '@zoralabs/protocol-deployments';
 import getProposalBytecode from './getProposalBytecode';
 
-const getZoraPurchaseProposalBytecode = () => {
-  const collectionAddress = '0x534feb004632acaf042a5eb5b6a180db39194b4c' as Address;
+const getZoraPurchaseProposalBytecode = (
+  collectionAddress: Address,
+  minter: Address,
+  recipient: Address,
+) => {
   const price = 0n;
   const zoraFee = parseEther('0.000777');
   const value = price + zoraFee;
-  const minter = '0x04E2516A2c207E84a1839755675dfd8eF6302F0a' as Address;
   const tokenId = 1n;
   const quantity = 1n;
-  const recipient = '0x4273e913cb67fcc350065d850f942352b74c18a8' as Address;
   const minterArguments = encodeAbiParameters(parseAbiParameters('address x, string y'), [
     recipient,
     'Based in Colombia 🇨🇴',
