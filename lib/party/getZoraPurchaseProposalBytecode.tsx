@@ -9,7 +9,7 @@ import { zoraCreator1155ImplABI } from '@zoralabs/protocol-deployments';
 import getProposalBytecode from './getProposalBytecode';
 
 const getZoraPurchaseProposalBytecode = () => {
-  const collectionAddress = '0xab00c2fbfb2cb909f64ba5808ed8c5078e8f1a32' as Address;
+  const collectionAddress = '0x534feb004632acaf042a5eb5b6a180db39194b4c' as Address;
   const price = 0n;
   const zoraFee = parseEther('0.000777');
   const value = price + zoraFee;
