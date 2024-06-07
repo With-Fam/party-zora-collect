@@ -6,7 +6,6 @@ const GenerateButton = () => {
   const { collectionAddress, saleStrategy, fundsRecipient, setProposalData, ethPrice, tokenId } =
     useProvider();
 
-  console.log('SWEETS ethPrice', ethPrice);
   const handleClick = () => {
     const response = getProposalData(
       collectionAddress,

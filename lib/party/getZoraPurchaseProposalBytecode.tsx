@@ -15,8 +15,6 @@ const getZoraPurchaseProposalBytecode = (
   ethPrice: number = 0,
   tokenId: bigint = 1n,
 ) => {
-  console.log('SWEETS ethPrice: ', ethPrice);
-  console.log('SWEETS tokenId: ', tokenId);
   const price = parseEther(ethPrice.toString());
   const zoraFee = parseEther('0.000777');
   const value = price + zoraFee;
