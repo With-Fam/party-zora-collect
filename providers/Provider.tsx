@@ -10,6 +10,8 @@ const Provider = ({ children }: any) => {
     '0x04E2516A2c207E84a1839755675dfd8eF6302F0a',
   );
   const [collectionAddress, setCollectionAddress] = useState<Address>();
+  const [tokenId, setTokenId] = useState<bigint>(1n);
+  const [ethPrice, setEthPrice] = useState<number>(0);
 
   const value = useMemo(
     () => ({
@@ -21,6 +23,10 @@ const Provider = ({ children }: any) => {
       setSaleStrategy,
       proposalData,
       setProposalData,
+      tokenId,
+      setTokenId,
+      ethPrice,
+      setEthPrice,
     }),
     [
       fundsRecipient,
@@ -31,6 +37,10 @@ const Provider = ({ children }: any) => {
       setSaleStrategy,
       proposalData,
       setProposalData,
+      tokenId,
+      setTokenId,
+      ethPrice,
+      setEthPrice,
     ],
   );
 

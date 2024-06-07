@@ -3,10 +3,18 @@ import Button from '../Button';
 import { useProvider } from '@/providers/Provider';
 
 const GenerateButton = () => {
-  const { collectionAddress, saleStrategy, fundsRecipient, setProposalData } = useProvider();
+  const { collectionAddress, saleStrategy, fundsRecipient, setProposalData, ethPrice, tokenId } =
+    useProvider();
 
+  console.log('SWEETS ethPrice', ethPrice);
   const handleClick = () => {
-    const response = getProposalData(collectionAddress, saleStrategy, fundsRecipient);
+    const response = getProposalData(
+      collectionAddress,
+      saleStrategy,
+      fundsRecipient,
+      ethPrice,
+      tokenId,
+    );
     setProposalData(response);
   };
 
