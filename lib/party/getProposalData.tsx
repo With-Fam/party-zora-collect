@@ -7,11 +7,15 @@ const getProposalData = (
   collectionAddress: Address = zeroAddress,
   minter: Address = zeroAddress,
   recipient: Address = zeroAddress,
+  ethPrice: number = 0,
+  tokenId: bigint = 1n,
 ) => {
   const encodedBytecodeProposalData = getZoraPurchaseProposalBytecode(
     collectionAddress,
     minter,
     recipient,
+    ethPrice,
+    tokenId,
   );
   const hexEncodedSelector = pad(toHex(ProposalType.ArbitraryCalls), {
     size: 4,
